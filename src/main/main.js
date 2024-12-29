@@ -7,7 +7,8 @@ const createWindow = () =>{
     const win = new BrowserWindow({
         width: 1200,
         height: 800,
-        autoHideMenuBar: true,
+        autoHideMenuBar: false,
+        toggleDevTools: true,
         webPreferences:{
             nodeIntegration: false,
             preload: path.join(__dirname, '../../preload.js'),
@@ -15,7 +16,12 @@ const createWindow = () =>{
         }
     })
 
-    win.loadFile(path.join(__dirname, '../../public/index.html'));
+    win.loadFile(path.join(__dirname, '../../public/login.html'));
+
+
+    ipcMain.on('login-success', () => {
+        win.loadFile(path.join(__dirname, '../../public/index.html'));
+    });
 }
 
 app.whenReady().then(()=>{

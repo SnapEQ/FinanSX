@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		data: expenseData,
 		options: {
 			responsive: true,
-			maintainAspectRatio: true,
+			maintainAspectRatio: false,
 			scales: {
 				y: {
 					beginAtZero: true,
@@ -54,7 +54,10 @@ window.addEventListener("DOMContentLoaded", () => {
 	};
 
 	// Create chart
-	//new Chart(ctx, config);
+	const expenseChart = new Chart(ctx, config);
+	window.addEventListener("resize", () => {
+		expenseChart.resize();
+	});
 
 
 
