@@ -31,6 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		data: expenseData,
 		options: {
 			responsive: true,
+			maintainAspectRatio: true,
 			scales: {
 				y: {
 					beginAtZero: true,
@@ -45,22 +46,30 @@ window.addEventListener("DOMContentLoaded", () => {
 					display: true,
 					text: "Monthly Expense Distribution",
 				},
+				customCanvasBackgroundColor: {
+					color: "#4C4C5B",
+				}
 			},
 		},
 	};
 
 	// Create chart
-	new Chart(ctx, config);
+	//new Chart(ctx, config);
 
 
 
-	//	TO DO 
-	// 	FIX THE SIDEBAR
-    const sidebar = document.querySelector(".sidebar");
-    
-    sidebar.addEventListener('click', () =>{
-        sidebar.style.display = "flex";
-    })
+const toggleBtn = document.querySelector(".toggle_btn");
+const toggleBtnIcon = document.querySelector(".toggle_btn i");
+const dropDownMenu = document.querySelector(".dropdown_menu");
+
+toggleBtn.onclick = () => {
+	dropDownMenu.classList.toggle('open');
+	const isOpen = dropDownMenu.classList.contains('open');
+
+	toggleBtnIcon.classList = isOpen
+	? 'fa-solid fa-xmark'
+	: 'fa-solid fa-bars';
+};
     
 
 });
