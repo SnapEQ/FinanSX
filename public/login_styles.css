@@ -1,0 +1,138 @@
+*{
+    font-family: 'Manrope', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #4C4C5B;
+    color: #2DE1C2;
+}
+
+
+a{
+    text-decoration: none;
+    color: #2DE1C2;
+    font-size: 1.2rem;
+}
+
+a:hover{
+    color: #ffffff;
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+    background-color: #34343e72;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+
+
+.action-btn{
+    background-color: #BA1F33;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action-btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+
+.action-btn:active{
+    scale: 0.95;
+}
+
+
+.content{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+
+h1{
+    font-size: 23px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+
+
+.login-container{
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   background-color: rgba(45, 225, 195, 0.801);
+   border-radius: 3px;
+   padding: 70px 100px;
+}
+
+.input-container{
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-container label{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 16px;
+    color: #ffffff;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;   
+}
+
+.input-container input{
+    border: 0;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0 5px 0;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.input-container input:focus{
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    outline: none;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}
+
+
+

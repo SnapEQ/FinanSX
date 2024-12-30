@@ -26,3 +26,7 @@ contextBridge.exposeInMainWorld('electron', {
     }
   }
 });
+
+contextBridge.exposeInMainWorld('login', {
+  username: () => 'admin',
+})
