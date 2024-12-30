@@ -20,4 +20,21 @@ const welcomeBackHeader = document.getElementById("welcome-back-h");
 
 	welcomeBackHeader.innerHTML = `Welcome back, ${window.login.username()}!`
 
+
+document.getElementById("dashboard-link").addEventListener("click", (e) => {
+	e.preventDefault();
+	window.electron.ipcRenderer.send('dashboard-open');
+});
+
+
+document.getElementById("dropdown-dashboard-link").addEventListener("click", (e) => {
+	e.preventDefault();
+	window.electron.ipcRenderer.send('dashboard-open');	
+});
+
+document.getElementById("logo").addEventListener("click", (e) => {
+	e.preventDefault();
+	window.electron.ipcRenderer.send('main-open');
+});
+
 });

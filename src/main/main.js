@@ -22,6 +22,14 @@ const createWindow = () =>{
     ipcMain.on('login-success', () => {
         win.loadFile(path.join(__dirname, '../../public/index.html'));
     });
+
+    ipcMain.on('dashboard-open', ()=>{
+        win.loadFile(path.join(__dirname, '../../public/dashboard.html'));
+    });
+
+    ipcMain.on('main-open',()=>{
+        win.loadFile(path.join(__dirname, '../../public/index.html'));
+    });
 }
 
 app.whenReady().then(()=>{
