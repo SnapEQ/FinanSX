@@ -9,6 +9,7 @@ body {
     min-height: 100vh;
     background: #4C4C5B;
     color: #2DE1C2;
+    overflow: hidden;
 }
 
 
@@ -134,5 +135,24 @@ h1{
 	
 }
 
-
+#title-bar {
+    -webkit-app-region: drag;
+    height: 24px; 
+    background-color: darkviolet;
+    padding: none;
+    margin: 0px; 
+   }
+   
+   #title {
+    position: fixed;
+    top: 0px;
+    left: 6px; 
+   }
+   
+   #title-bar-btns {
+    -webkit-app-region: no-drag;
+    position: fixed;
+    top: 0px;
+    right: 6px;
+   }
 
