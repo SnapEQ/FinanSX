@@ -11,13 +11,13 @@ contextBridge.exposeInMainWorld("versions", {
 contextBridge.exposeInMainWorld("electron", {
 	ipcRenderer: {
 		send: (channel, data) => {
-			let validChannels = ["login-success", "dashboard-open", "main-open", "cls-app", "min-app", "max-app"];
+			let validChannels = ["login-success", "dashboard-open", "main-open", "cls-app", "min-app", "max-app", "send-balance"];
 			if (validChannels.includes(channel)) {
 				ipcRenderer.send(channel, data);
 			}
 		},
 		receive: (channel, func) => {
-			let validChannels = ["fromMain"];
+			let validChannels = ["fromMain", "receive-balance"];
 			if (validChannels.includes(channel)) {
 				// Deliberately strip
 				// event as it includes `sender`

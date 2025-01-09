@@ -43,9 +43,6 @@ header {
     font-weight: bold;
 }
 
-
-
-
 .action-btn{
     background-color: #BA1F33;
     color: #fff;
@@ -141,18 +138,18 @@ h1{
     background-color: darkviolet;
     padding: none;
     margin: 0px; 
-   }
+}
    
-   #title {
+#title {
     position: fixed;
     top: 0px;
     left: 6px; 
-   }
+}
    
-   #title-bar-btns {
+#title-bar-btns {
     -webkit-app-region: no-drag;
     position: fixed;
     top: 0px;
     right: 6px;
-   }
+}
 

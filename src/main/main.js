@@ -1,6 +1,8 @@
 const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const path = require("path");
 
+const balance = 4.20;
+
 const createWindow = () => {
 	const win = new BrowserWindow({
 		width: 1200,
@@ -17,12 +19,19 @@ const createWindow = () => {
 
 	win.loadFile(path.join(__dirname, "../../public/login.html"));
 
+
 	ipcMain.on("login-success", () => {
 		win.loadFile(path.join(__dirname, "../../public/index.html"));
+		win.webContents.on("did-finish-load", () => {
+			win.webContents.send('receive-balance', balance);
+			console.log("message sent");
+		});
 	});
-
+	
 	ipcMain.on("dashboard-open", () => {
+		console.log("dashboard-open event fired");
 		win.loadFile(path.join(__dirname, "../../public/dashboard.html"));
+		
 	});
 
 	ipcMain.on("main-open", () => {
@@ -40,6 +49,7 @@ const createWindow = () => {
     ipcMain.on("max-app", ()=>{
         win.maximize();
     });
+
 };
 
 app.whenReady().then(() => {
