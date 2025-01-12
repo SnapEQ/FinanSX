@@ -1,7 +1,8 @@
 const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const path = require("path");
+const Store = require("../utils/store");
 
-const balance = 4.20;
+const store = new Store();
 
 const createWindow = () => {
 	const win = new BrowserWindow({
@@ -23,9 +24,21 @@ const createWindow = () => {
 	ipcMain.on("login-success", () => {
 		win.loadFile(path.join(__dirname, "../../public/index.html"));
 		win.webContents.on("did-finish-load", () => {
-			win.webContents.send('receive-balance', balance);
+			win.webContents.send('receive-balance', store.getBalance());
 			console.log("message sent");
 		});
+	});
+
+
+	ipcMain.on("update-balance", (event, newBalance) => {
+		event.preventDefault();
+		store.setBalance(newBalance);
+		win.webContents.send('receive-balance', newBalance);
+		console.log("balance updated");
+	});
+
+	ipcMain.on("get-balance", () => {
+		win.webContents.send('receive-balance', store.getBalance());
 	});
 	
 	ipcMain.on("dashboard-open", () => {
@@ -63,3 +76,5 @@ app.whenReady().then(() => {
 app.on("window-all-closed", () => {
 	if (process.platform !== "darwin") app.quit();
 });
+
+console.log(app.getPath("userData"));

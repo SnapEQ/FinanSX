@@ -11,7 +11,7 @@ contextBridge.exposeInMainWorld("versions", {
 contextBridge.exposeInMainWorld("electron", {
 	ipcRenderer: {
 		send: (channel, data) => {
-			let validChannels = ["login-success", "dashboard-open", "main-open", "cls-app", "min-app", "max-app", "send-balance"];
+			let validChannels = ["login-success", "dashboard-open", "main-open", "cls-app", "min-app", "max-app", "send-balance", "update-balance", "get-balance"];
 			if (validChannels.includes(channel)) {
 				ipcRenderer.send(channel, data);
 			}
