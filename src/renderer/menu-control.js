@@ -45,3 +45,8 @@ document.getElementById("close-btn").addEventListener("click", (e)=>{
     e.preventDefault();
     window.electron.ipcRenderer.send('cls-app');
 });
+
+document.getElementById("reload-btn").addEventListener("click", (e)=>{
+    e.preventDefault();
+    window.electron.ipcRenderer.send('reload-app');
+});

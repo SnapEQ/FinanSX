@@ -155,7 +155,7 @@ header {
     align-items: left;
     gap: 1rem;
     padding: 1rem;
-    margin: 2rem;
+    margin: 1rem;
     background-color: #BA1F33;
     min-width: 20vw;
     min-height: 10vh;
@@ -170,10 +170,35 @@ header {
     align-items: left;
     gap: 1rem;
     padding: 1rem;
-    margin: 2rem;
+    margin: 1rem;
     background-color: aquamarine;
     border-radius: 15px;
 }
+
+
+.transactions-container{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #BA1F33;
+    min-width: 20vw;
+    max-width: 40vw;
+    min-height: 10vh;
+    max-height: 20vh;
+    border: none;
+    border-radius: 15px;
+}
+
+.transactions-header{
+    display: table-column;
+    padding: 0.5rem 1rem;
+
+}
+
+
 
 #title-bar {
     -webkit-app-region: drag;

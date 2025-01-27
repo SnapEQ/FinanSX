@@ -4,6 +4,12 @@ const Store = require("../utils/store");
 
 const store = new Store();
 
+
+
+// TO DO
+// 1. Switch logging back on before packaging
+
+
 const createWindow = () => {
 	const win = new BrowserWindow({
 		width: 1200,
@@ -61,6 +67,10 @@ const createWindow = () => {
 
     ipcMain.on("max-app", ()=>{
         win.maximize();
+    });
+
+	ipcMain.on("reload-app", ()=>{
+        win.webContents.reloadIgnoringCache();
     });
 
 };
