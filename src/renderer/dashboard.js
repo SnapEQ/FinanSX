@@ -26,4 +26,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Request initial balance
     window.electron.ipcRenderer.send("get-balance");
+
+
+    const transactionsList = document.getElementById("transactions-list");
+    document.getElementById("add-transaction-btn").addEventListener("click", e =>{
+        console.log("add-transaction-btn clicked");
+        e.preventDefault();
+        let div = document.createElement('div');
+        div.setAttribute("id", "transaction "+1);
+        div.innerHTML = "whatever";
+        transactionsList.appendChild(div);
+    });
 });
